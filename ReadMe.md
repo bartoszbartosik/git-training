@@ -92,6 +92,23 @@ Staging & committing files simultaneously:
 git commit -a -m "Updated ReadMe.md file"
 ```
 
+## Removing files
+
+Deleting the file from a disk, but having a Git record of the file deletion in the index:
+
+```
+git rm <file_name>
+```
+
+## Reverting changes
+
+If the file was removed using the _git rm_ command, it cannot be retrieved using the way below:
+
+```
+git rm index.html
+git checkout -- index.html
+```
+
 # Investigating changes
 
 Checking against new changes in a working tree:
@@ -103,8 +120,10 @@ git status
 Showing information about the previous commits:
 
 ```
-git log
+git log [--oneline] [-nX]
 ```
+
+The _--oneline_ option will print the previous commits in a concise form, while _-nX_ will print the previous X commits.
 
 Showing yet unstaged changes:
 
