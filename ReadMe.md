@@ -42,7 +42,7 @@ type nul > ReadMe.md
 
 ## Subdirectory
 
-Creating a CSS subfolder in a working tree and attempting to perform _git add_ on it will result in failure. This is because Git doesn't track empty directories. In case there is a desire to track the empty folder, a common convention is to create an empty file, often called _.git-keep_, in a placeholder directory.
+Creating a CSS subfolder in a working tree and attempting to perform `git add` on it will result in failure. This is because Git doesn't track empty directories. In case there is a desire to track the empty folder, a common convention is to create an empty file, often called `.git-keep`, in a placeholder directory.
 
 ```
 mkdir CSS
@@ -102,12 +102,21 @@ git rm <file_name>
 
 ## Reverting changes
 
-If the file was removed using the _git rm_ command, it cannot be retrieved using the way below:
+If the file was removed using the `git rm` command, it cannot be retrieved using the way below:
 
 ```
 git rm index.html
 git checkout -- index.html
 ```
+
+instead, a `git reset` command has to be used in order to unstage a change done by `git rm` command:
+
+```
+git reset HEAD index.html
+git checkout -- index.html
+```
+
+Here, `git reset` unstages the file deletion from Git. This command brings the file back to the index, but the file is still deleted on disk. You can then restore it to the disk from the index by using `git checkout`.
 
 # Investigating changes
 
@@ -123,7 +132,7 @@ Showing information about the previous commits:
 git log [--oneline] [-nX]
 ```
 
-The _--oneline_ option will print the previous commits in a concise form, while _-nX_ will print the previous X commits.
+The `--oneline` option will print the previous commits in a concise form, while `-nX` will print the previous X commits.
 
 Showing yet unstaged changes:
 
@@ -137,7 +146,7 @@ Showing changes made in comparison to the last commit:
 git diff HEAD^
 ```
 
-**Note**: in order to get help or quit from preview the above commands show, use _:h_ for former and _:q_ for latter.
+**Note**: in order to get help or quit from preview the above commands show, use `:h` for former and `:q` for latter.
 
 # Creating a GitHub remote
 
