@@ -107,7 +107,7 @@ git rm <file_name>
 If the file was simply removed from the project's working tree, it can be recovered using the commands below:
 
 ```
-git rm index.html
+rm index.html
 git checkout -- index.html
 ```
 
