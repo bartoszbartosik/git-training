@@ -104,14 +104,14 @@ git rm <file_name>
 
 ### Before committing
 
-If the file was removed using the `git rm` command, it cannot be retrieved using the way below:
+If the file was simply removed from the project's working tree, it can be recovered using the commands below:
 
 ```
 git rm index.html
 git checkout -- index.html
 ```
 
-instead, a `git reset` command has to be used in order to unstage a change done by `git rm` command:
+If the file was removed using the `git rm` command, it cannot be retrieved using the way above. Instead, a `git reset` command has to be used in order to unstage a change done by `git rm` command:
 
 ```
 git reset HEAD index.html
@@ -127,6 +127,8 @@ A `--hard` reset changes both the index and the working tree to match the specif
 ```
 git reset --hard HEAD^
 ```
+
+Another alternative is to use `git revert [--no-edit] HEAD` command. If it is desired to leave the trace of commit revertion in the Git history, `--no-edit` should be omitted.
 
 # Investigating changes
 
