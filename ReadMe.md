@@ -42,10 +42,16 @@ type nul > ReadMe.md
 
 ## Staging
 
-Staging all project files:
+Staging all project files, but ignoring removed from the working tree ones:
 
 ```
 git add .
+```
+
+Staging all project files, including removed from the working tree ones:
+
+```
+git add -A
 ```
 
 Stage specific file:
@@ -89,6 +95,20 @@ Showing information about the previous commits:
 ```
 git log
 ```
+
+Showing yet unstaged changes:
+
+```
+git diff
+```
+
+Showing changes made in comparison to the last commit:
+
+```
+git diff HEAD^
+```
+
+**Note**: in order to get help or quit from preview the above commands show, use _:h_ for former and _:q_ for latter.
 
 # Creating a GitHub remote
 
