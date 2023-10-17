@@ -158,9 +158,19 @@ Showing changes made in comparison to the last commit:
 git diff HEAD^
 ```
 
-**Note**: in order to get help or quit from preview the above commands show, use `:h` for former and `:q` for latter.
+**Note**: in order to get help or quit from preview the above commands show, use `:h` for the former and the `:q` for latter.
 
-# Creating a GitHub remote
+# Collaborating
+
+## Cloning
+
+Copying project from specified URL into the directory:
+
+```
+git clone https://github.com/bartoszbartosik/git-training.git .
+```
+
+## Creating a GitHub remote
 
 Creating a remote directory:
 
