@@ -48,6 +48,12 @@ Staging all project files:
 git add .
 ```
 
+Stage specific file:
+
+```
+git add index.html
+```
+
 ## Commits
 
 Saving changes by performing a commit:
