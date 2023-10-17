@@ -122,13 +122,11 @@ Here, `git reset` unstages the file deletion from Git. This command brings the f
 
 ### After committing
 
-A `--hard` reset changes both the index and the working tree to match the specified commit; any changes made to tracked files are discarded leaving no trace in files history.
+A `--hard` reset changes both the index and the working tree to match the specified commit; any changes made to tracked files are discarded.
 
 ```
 git reset --hard HEAD^
 ```
-
-This is an intentional mistake.
 
 # Investigating changes
 
