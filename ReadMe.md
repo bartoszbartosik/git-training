@@ -40,6 +40,16 @@ Creating a first, ReadMe.md, file in a project directory:
 type nul > ReadMe.md
 ```
 
+## Subdirectory
+
+Creating a CSS subfolder in a working tree and attempting to perform _git add_ on it will result in failure. This is because Git doesn't track empty directories. In case there is a desire to track the empty folder, a common convention is to create an empty file, often called _.git-keep_, in a placeholder directory.
+
+```
+mkdir CSS
+cd CSS
+type nul > .git-keep
+```
+
 ## Staging
 
 Staging all project files, but ignoring removed from the working tree ones:
