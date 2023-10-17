@@ -102,6 +102,8 @@ git rm <file_name>
 
 ## Reverting changes
 
+### Before committing
+
 If the file was removed using the `git rm` command, it cannot be retrieved using the way below:
 
 ```
@@ -117,6 +119,14 @@ git checkout -- index.html
 ```
 
 Here, `git reset` unstages the file deletion from Git. This command brings the file back to the index, but the file is still deleted on disk. You can then restore it to the disk from the index by using `git checkout`.
+
+### After committing
+
+A `--hard` reset changes both the index and the working tree to match the specified commit; any changes made to tracked files are discarded.
+
+```
+git reset --hard HEAD^
+```
 
 # Investigating changes
 
