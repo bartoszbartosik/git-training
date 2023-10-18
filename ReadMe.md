@@ -15,6 +15,15 @@ Showing a list of configuration parameters in order to verify introduced changes
 git config --list
 ```
 
+## Local settings
+
+Setting working directory's username and email address:
+
+```
+git config user.name "Alice"
+git config user.email "alice@contoso.com"
+```
+
 ## Local repository
 
 Initializing a local repository with a branch named "main":
