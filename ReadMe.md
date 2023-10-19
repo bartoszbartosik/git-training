@@ -171,14 +171,6 @@ git diff HEAD^
 
 # Collaborating
 
-## Cloning
-
-Copying project from specified URL into the directory:
-
-```
-git clone https://github.com/bartoszbartosik/git-training.git .
-```
-
 ## Creating a GitHub remote
 
 Creating a remote directory:
@@ -191,6 +183,14 @@ Pushing changes to the remote repository:
 
 ```
 git push -u origin main
+```
+
+## Cloning
+
+Copying project from specified URL into the directory:
+
+```
+git clone https://github.com/bartoszbartosik/git-training.git .
 ```
 
 ## Pulling
@@ -216,3 +216,34 @@ git stash pop
 ```
 
 Popping the stash merges the changes.
+
+## Branching
+
+Creating new branch and switching to it can be done using the command below:
+
+```
+git branch <branch_name>
+git checkout <branch_name>
+```
+
+This can be done with a use of a single command as well: `git checkout -b <branch_name>`.
+The common convention for naming branches is indicating what they are responsible for using hyphen as word separator, like `add-feature`.
+
+### Merging
+
+After doing changes in the new branch and committing them, a checkout to the `main` branch has to be done. Next, before proceeding to merging, the new eventual changes should be adapted from the remote repository using `git pull`. In order to perform merging, a good practice is to use `--ff-only` (_fast-forward merge_) option as it will fail if there were changes done in the meantime to the `main` branch. Then the changes can be pushed into the remote repository.
+
+```
+git checkout main
+git pull
+git merge --ff-only <branch_name>
+git push
+```
+
+In a case there were changes to the main branch in the shared repository, the `--ff-only` option should be omitted:
+
+```
+git merge add-feature --no-edit
+```
+
+In case there is a conflict, it can be resolved manually using the information Git generated in the file editor.
