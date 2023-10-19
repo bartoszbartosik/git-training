@@ -192,3 +192,11 @@ Pushing changes to the remote repository:
 ```
 git push -u origin main
 ```
+
+## Pulling
+
+Update project with new commits from the remote repository (equivalent of `git fetch` + `git merge`)
+
+```
+git pull
+```
