@@ -1,3 +1,19 @@
+# Table of contents
+
+1. [Initialization](#initialization)
+2. [Creating a project](#creating-a-project)
+   1. [Staging](#staging)
+   2. [Commits](#commits)
+   3. [Removing files](#removing-files)
+   4. [Reverting changes](#reverting-changes)
+3. [Investigating changes](#investigating-changes)
+4. [Collaborating](#collaborating)
+   1. [Creating a GitHub remote](#creating-a-github-remote)
+   2. [Cloning](#cloning)
+   3. [Pulling](#pulling)
+   4. [Branching](#branching)
+   5. [Merging](#merging)
+
 # Initialization
 
 ## Global settings
@@ -228,7 +244,7 @@ git checkout <branch_name>
 This can be done with a use of a single command as well: `git checkout -b <branch_name>`.
 The common convention for naming branches is indicating what they are responsible for using hyphen as word separator, like `add-feature`.
 
-### Merging
+## Merging
 
 After doing changes in the new branch and committing them, a checkout to the `main` branch has to be done. Next, before proceeding to merging, the new eventual changes should be adapted from the remote repository using `git pull`. In order to perform merging, a good practice is to use `--ff-only` (_fast-forward merge_) option as it will fail if there were changes done in the meantime to the `main` branch. Then the changes can be pushed into the remote repository.
 
