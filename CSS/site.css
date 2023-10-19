@@ -9,3 +9,10 @@ h6 {
 body {
   font-family: serif;
 }
+nav {
+  background-color: #c0d8df;
+}
+nav,
+footer {
+  background-color: #c0d8df;
+}
