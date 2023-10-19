@@ -16,3 +16,7 @@ nav,
 footer {
   background-color: #c0d8df;
 }
+.cat {
+  max-width: 40%;
+  padding: 5;
+}
