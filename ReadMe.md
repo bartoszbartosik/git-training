@@ -200,3 +200,19 @@ Update project with new commits from the remote repository (equivalent of `git f
 ```
 git pull
 ```
+
+Sometimes, while working on a project in a local repository, someone can in the meantime push to the origin repository. If there is a need to pull these changes, the ones made in a local repository have to be stashed first:
+
+```
+git stash
+```
+
+Stash saves the state of a working tree and can be treated as a way to save current work without making a "real" commit.
+Now, in order to merge them together in a local repository, the commands below need to be executed:
+
+```
+git pull
+git stash pop
+```
+
+Popping the stash merges the changes.
