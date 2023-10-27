@@ -182,6 +182,12 @@ Showing changes made in comparison to the last commit:
 git diff HEAD^
 ```
 
+Showing changes between a local branch and its remote branch:
+
+```
+git diff <local-branch> <remote>/<remote-branch>
+```
+
 **Note**: in order to get help or quit from preview the above commands show, use `:h` for the former and the `:q` for latter.
 
 # Collaborating
